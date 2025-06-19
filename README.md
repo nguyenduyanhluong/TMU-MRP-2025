@@ -1,6 +1,7 @@
 # TMU-MRP-2025
 # Optimizing Supervised Machine Learning for Enhanced Transaction Fraud Detection Accuracy
-## Project Overview
+# Literature Review and Exploratory Data Analysis (EDA)
+## Overview
 
 This repository contains the second phase of my Major Research Project (MRP) for the MSc in Data Science and Analytics program at Toronto Metropolitan University. The focus of this phase is on conducting a comprehensive **Literature Review** and performing an **Exploratory Data Analysis (EDA)** on the IEEE-CIS Fraud Detection dataset.
 
