@@ -26,3 +26,6 @@ This dataset includes anonymized transaction and identity data, representing rea
 ## Next Steps
 
 The next stage of this project will focus on **Methodology** and **Experiements**:
+- Feature engineering and transformation
+- Model development using supervised learning (Logistic Regression, Random Forest, XGBoost, ANN/DNN)
+- Evaluation with metrics suited for imbalanced classification
