@@ -1,23 +1,30 @@
 # TMU-MRP-2025
 # Optimizing Supervised Machine Learning for Enhanced Transaction Fraud Detection Accuracy
-## Methodology and Experiments
+## Results
 ## Overview
 
-This repository contains the third phase of my Major Research Project (MRP) for the MSc in Data Science and Analytics program at Toronto Metropolitan University. This stage focuses on building, training, and evaluating supervised machine learning models for credit card fraud detection using the IEEE-CIS Fraud Detection dataset.
+This repository contains the final phase of my Major Research Project (MRP) for the MSc in Data Science and Analytics program at Toronto Metropolitan University. This stage focuses on optimizing the best-performing models from the Methodology and Experiments phase, comparing their performance against real-world benchmarks, and providing recommendations for practical deployment in fraud detection systems.
 
 ## Objectives
 
-- Develop supervised machine learning models to classify transactions as fraudulent or non-fraudulent
-- Handle extreme class imbalance using model-based techniques (e.g., class weighting, focal loss)
-- Evaluate models using metrics suited for imbalanced data, including ROC-AUC, PR-AUC, F1-score, recall, and precision
-- Interpret model decisions using SHAP values and feature importance plots to support explainability
+- Refine and optimize top-performing fraud detection models
+- Compare standalone XGBoost and a hybrid XGBoost + Deep Neural Network (DNN) ensemble
+- Evaluate models using metrics suited for imbalanced data (ROC-AUC, PR-AUC, F1-score, recall, precision)
+- Benchmark performance against the winning Kaggle IEEE-CIS Fraud Detection solution
+- Provide actionable insights for deploying fraud detection models in production environments
 
 ## Methodology
-- **Data Preprocessing:** Combined transaction and identity datasets, handled missing values, label-encoded categorical variables, extracted time-based features, and split the data with stratification
-- **Class Imbalance Handling:** Applied scale-sensitive class weights and focal loss to give more importance to fraud cases without oversampling
-- **Model Development:** Trained and evaluated Logistic Regression, Random Forest, XGBoost, Artificial Neural Network (ANN), and Deep Neural Network (DNN)
-- **Evaluation Strategy:** Assessed models on accuracy, recall, precision, F1-score, ROC-AUC, PR-AUC, and confusion matrices
-- **Model Interpretation:** Used SHAP (for XGBoost) and built-in feature importance (for Random Forest) to analyze which features most influence predictions
+- **Model Optimization:** Tuned XGBoost with advanced hyperparameters (regularization, learning rate, feature sampling) for maximum recall and balanced performance.
+- **Ensemble Approach:** Combined XGBoost with a DNN using a weighted probability average (0.6 for XGBoost, 0.4 for DNN) to leverage the strengths of both models.
+- **Loss Function:** Implemented Focal Loss in the DNN to handle extreme class imbalance and reduce the impact of easily classified examples.
+- **Evaluation Strategy:** Compared models using validation data and reported metrics like ROC-AUC, PR-AUC, precision, recall, F1-score, and confusion matrices.
+- **Benchmarking:** Measured performance against the 1st place Kaggle model to assess competitiveness.
+
+## Key Results
+- The Enhanced XGBoost model achieved a ROC-AUC of 0.9628 and a PR-AUC of 0.7676, identifying over 82% of fraud cases with a reasonable trade-off on precision.
+- The XGBoost + DNN ensemble reached a ROC-AUC of 0.9629 and a PR-AUC of 0.7898, with a precision of 0.7818 and recall of 0.6927, striking a strong balance between catching fraud and limiting false positives.
+- Both models outperformed the standalone 1st place XGBoost from the Kaggle competition (ROC-AUC 0.9602 public, 0.9324 private).
+- The ensemble’s performance makes it especially promising for deployment, where minimizing missed fraud and excessive false alarms is critical.
 
 ## Dataset
 
@@ -33,7 +40,8 @@ This dataset contains anonymized transaction and identity information from real-
 
 ## Next Steps
 
-The next stage of this project will focus on **Results**:
-- Model optimization and ensemble techniques (e.g., XGBoost Stand Alone, XGBoost + DNN)
-- Final evaluation and comparison
-- Insights and recommendations for real-world deployment of fraud detection models
+The next and final stage of this project will be the **Final Report**, which will:
+- Summarize the findings across all project phases
+- Compare all models and results in one place
+- Provide final recommendations for deploying the fraud detection system in a real-world setting
+- Document lessons learned and opportunities for further research
