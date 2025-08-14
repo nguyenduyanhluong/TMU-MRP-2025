@@ -3,45 +3,39 @@
 ## Results
 ## Overview
 
-This repository contains the final phase of my Major Research Project (MRP) for the MSc in Data Science and Analytics program at Toronto Metropolitan University. This stage focuses on optimizing the best-performing models from the Methodology and Experiments phase, comparing their performance against real-world benchmarks, and providing recommendations for practical deployment in fraud detection systems.
+This repository contains the implementation and experiments from my **Major Research Project (MRP)** for the MSc in Data Science and Analytics program at Toronto Metropolitan University. The project focuses on improving credit card fraud detection using supervised machine learning, comparing both single-model and hybrid approaches, and evaluating their performance on a real-world dataset.
+
+The study explored multiple algorithms, identified the most effective ones, and examined their decision-making process using model interpretability techniques. Recommendations are provided for deploying these models in practical fraud detection systems.
 
 ## Objectives
 
-- Refine and optimize top-performing fraud detection models
-- Compare standalone XGBoost and a hybrid XGBoost + Deep Neural Network (DNN) ensemble
-- Evaluate models using metrics suited for imbalanced data (ROC-AUC, PR-AUC, F1-score, recall, precision)
-- Benchmark performance against the winning Kaggle IEEE-CIS Fraud Detection solution
-- Provide actionable insights for deploying fraud detection models in production environments
+- Identify the supervised ML model that offers the best balance between detection accuracy and false positives.
+- Test the benefits of combining models in an ensemble compared to using individual models.
+- Explore the role of feature engineering in improving model accuracy and robustness.
+- Handle class imbalance effectively using **class weighting.**
+- Evaluate models using appropriate metrics for imbalanced data such as ROC-AUC, PR-AUC, F1-score, recall, and precision.
 
 ## Methodology
-- **Model Optimization:** Tuned XGBoost with advanced hyperparameters (regularization, learning rate, feature sampling) for maximum recall and balanced performance.
-- **Ensemble Approach:** Combined XGBoost with a DNN using a weighted probability average (0.6 for XGBoost, 0.4 for DNN) to leverage the strengths of both models.
-- **Loss Function:** Implemented Focal Loss in the DNN to handle extreme class imbalance and reduce the impact of easily classified examples.
-- **Evaluation Strategy:** Compared models using validation data and reported metrics like ROC-AUC, PR-AUC, precision, recall, F1-score, and confusion matrices.
-- **Benchmarking:** Measured performance against the 1st place Kaggle model to assess competitiveness.
+- **Model Selection:** Evaluated Logistic Regression, Random Forest, XGBoost, Artificial Neural Networks, Deep Neural Networks, and an XGBoost + DNN ensemble.
+- **Class Imbalance Handling:** Applied class weighting to improve detection of rare fraud cases.
+- **Ensemble Approach:** Combined XGBoost with DNN through weighted probability averaging to leverage the strengths of both.
+- **Evaluation Metrics:** Measured ROC-AUC, PR-AUC, precision, recall, F1-score, and confusion matrices.
+- **Model Interpretation:** Used SHAP for XGBoost and feature importance for Random Forest to understand which features drive fraud detection.
 
 ## Key Results
-- The Enhanced XGBoost model achieved a ROC-AUC of 0.9628 and a PR-AUC of 0.7676, identifying over 82% of fraud cases with a reasonable trade-off on precision.
-- The XGBoost + DNN ensemble reached a ROC-AUC of 0.9629 and a PR-AUC of 0.7898, with a precision of 0.7818 and recall of 0.6927, striking a strong balance between catching fraud and limiting false positives.
-- Both models outperformed the standalone 1st place XGBoost from the Kaggle competition (ROC-AUC 0.9602 public, 0.9324 private).
-- The ensemble’s performance makes it especially promising for deployment, where minimizing missed fraud and excessive false alarms is critical.
+- **Enhanced XGBoost and XGBoost + DNN Ensemble** delivered the best overall performance.
+- The **ensemble model** achieved strong precision–recall balance, making it suitable for minimizing both missed fraud and false positives.
+- Feature analysis revealed that transaction amount, card details, engineered behavioral features, and time-based patterns are key predictors.
+- No identity-based features (e.g., device type, email domain) were added, as they were unnecessary for this dataset.
 
 ## Dataset
 
 **Source:** [IEEE-CIS Fraud Detection Dataset (Kaggle)](https://www.kaggle.com/competitions/ieee-fraud-detection/data)
 
-This dataset contains anonymized transaction and identity information from real-world e-commerce activity, reflecting challenges such as class imbalance, anonymized features, and time-based behavior.
+The dataset contains anonymized transaction information with severe class imbalance, making it ideal for testing fraud detection methods.
 
 ## Contact
 
 **Author:** Nguyen Duy Anh Luong  
 **Supervisor:** Dr. Shengkun Xie  
 **Email:** [nguyenduyanh.luong@torontomu.ca]
-
-## Next Steps
-
-The next and final stage of this project will be the **Final Report**, which will:
-- Summarize the findings across all project phases
-- Compare all models and results in one place
-- Provide final recommendations for deploying the fraud detection system in a real-world setting
-- Document lessons learned and opportunities for further research
