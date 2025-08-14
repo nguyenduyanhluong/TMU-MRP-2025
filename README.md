@@ -31,7 +31,7 @@ The study explored multiple algorithms, identified the most effective ones, and 
 
 **Source:** [IEEE-CIS Fraud Detection Dataset (Kaggle)](https://www.kaggle.com/competitions/ieee-fraud-detection/data)
 
-The dataset contains anonymized transaction information with severe class imbalance, making it ideal for testing fraud detection methods.
+This dataset contains anonymized transaction and identity information from real-world e-commerce activity, reflecting challenges such as class imbalance, anonymized features, and time-based behavior.
 
 ## Contact
 
