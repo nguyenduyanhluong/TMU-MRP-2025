@@ -1,6 +1,5 @@
 # TMU-MRP-2025
-# Optimizing Supervised Machine Learning for Enhanced Transaction Fraud Detection Accuracy
-## Results
+# DEVELOPMENT OF MACHINE LEARNING-BASED ALGORITHM FOR ENHANCING TRANSACTION FRAUD DETECTION
 ## Overview
 
 This repository contains the implementation and experiments from my **Major Research Project (MRP)** for the MSc in Data Science and Analytics program at Toronto Metropolitan University. The project focuses on improving credit card fraud detection using supervised machine learning, comparing both single-model and hybrid approaches, and evaluating their performance on a real-world dataset.
