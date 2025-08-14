@@ -15,8 +15,8 @@ The study explored multiple algorithms, identified the most effective ones, and 
 - Evaluate models using appropriate metrics for imbalanced data such as ROC-AUC, PR-AUC, F1-score, recall, and precision.
 
 ## Methodology
-- **Model Selection:** Evaluated Logistic Regression, Random Forest, XGBoost, Artificial Neural Networks, Deep Neural Networks, and an XGBoost + DNN ensemble.
-- **Class Imbalance Handling:** Applied class weighting to improve detection of rare fraud cases.
+- **Model Selection:** Evaluated Logistic Regression, Random Forest, XGBoost, Artificial Neural Networks, Deep Neural Networks, and an **XGBoost + DNN ensemble.**
+- **Class Imbalance Handling:** Applied **class weighting** to improve detection of rare fraud cases.
 - **Ensemble Approach:** Combined XGBoost with DNN through weighted probability averaging to leverage the strengths of both.
 - **Evaluation Metrics:** Measured ROC-AUC, PR-AUC, precision, recall, F1-score, and confusion matrices.
 - **Model Interpretation:** Used SHAP for XGBoost and feature importance for Random Forest to understand which features drive fraud detection.
